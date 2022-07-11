@@ -5,7 +5,7 @@ function LoginBox() {
     return (
         <div className='login-container'>
             <div className='login-box'>
-                <div className='title'>Login to Blogchain</div>
+                <div className='title'>Login to BetSol</div>
                 <div className='sub-title'>Unlock the new world!</div>
                 <div className='button-container'>
                     <WalletMultiButton />
