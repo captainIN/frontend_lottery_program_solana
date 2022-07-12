@@ -22,14 +22,19 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <React.Fragment>
       <Head>
-        <title>BetSol</title>
-        {/* <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" /> */}
+        <meta name="title" content="BetSol - Solana based lottery program" />
+        <meta name="description" content="Take part in range of lotteries on the decentralised infrastructure. Developed by Jaymanyoo Singh Chouhan (@captainIN)" />
+        <meta name="keywords" content="solana, anchor, lottery, dapp" />
+        <meta name="robots" content="index,follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
 
       <WalletConnectProvider>
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </WalletConnectProvider>
 
     </React.Fragment>

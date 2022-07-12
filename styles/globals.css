@@ -18,3 +18,9 @@ a {
 .wallet-adapter-button-trigger {
   background-color: #d9a91b !important;
 }
+
+.layout{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

@@ -1,5 +1,5 @@
 .nav{
-    padding: 10px;
+    padding: 10px 2rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -10,9 +10,9 @@
 
     margin-bottom: 20px;
     .logo{
-        font-weight: bold;
-        font-size: 20px;
-        color: #9b6c00;
+        img{
+            width: 150px;
+        }
     }
     .wallet-info{
 

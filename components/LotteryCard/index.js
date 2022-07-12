@@ -22,9 +22,11 @@ function LotteryCard({ data, take_part, elect_winner, getParticipantInfo, claimR
   return (
     <div className={`lottery-card ${!data.isActive ? 'inactive' : ''} ${isWinner ? 'winner-card' : ''}`}>
       <div className='pool-size'>{parseInt(data.funds.toString()) / 1000000000} <span className='currency'>SOL</span></div>
-      {data.isActive && <button className='entry-btn' onClick={() => take_part(data.index)}>ENROLL NOW</button>}
-      {!data.isActive && !isWinner && <div className='entry-btn disabled'>Ended</div>}
-      {userIsManager && data.isActive && <button className='entry-btn success' onClick={() => { elect_winner(data.index) }}>Draw Winner</button>}
+      <div className='act-btns'>
+        {data.isActive && <button className='entry-btn' onClick={() => take_part(data.index)}>ENROLL NOW</button>}
+        {!data.isActive && !isWinner && <div className='entry-btn disabled'>Ended</div>}
+        {userIsManager && data.isActive && <button className='entry-btn success' onClick={() => { elect_winner(data.index) }}>Draw Winner</button>}
+      </div>
       <div className='entry-fee'>
         <div className='cost'>
           <div className='title'>Entry Fee</div>

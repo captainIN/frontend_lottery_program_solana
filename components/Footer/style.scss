@@ -1,0 +1,26 @@
+.footer{
+   margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .name{
+
+    }
+    .social{
+        display: flex;
+        align-items: center;
+    }
+    .icon{
+        margin-left: 16px;
+        margin-bottom: 0;
+        cursor: pointer;
+        img{
+            height: 20px;
+            width: 20px;
+        }
+    }
+    a{
+        font-weight: bold;
+    }
+}

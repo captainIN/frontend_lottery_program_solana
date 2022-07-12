@@ -1,0 +1,46 @@
+.create-lottery-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    .create-lottery-form{
+        background-color: #fff;
+        padding: 16px 24px;
+        border-radius: 8px;
+        min-height: 220px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h3{
+            margin: 0;
+            margin-bottom: 8px;
+            color: #513600;
+        }
+        label{
+            color: #513600;
+        }
+        input{
+            margin-bottom: 16px;
+            width: 100%;
+            border: 1px solid #c4c4c4;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+
+        .submit-btn{
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            padding: 8px;
+            cursor: pointer;
+            background-color: #d9a91b;
+            color: #fff;
+            font-weight: bold;
+            &:hover{
+                box-shadow: 0px 1px 4px #00000050;
+            }
+        }
+    }
+}

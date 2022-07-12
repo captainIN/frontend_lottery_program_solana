@@ -31,14 +31,18 @@
             font-size: 18px;
         }
     }
-
+    .act-btns{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .entry-btn {
         min-width: 107px;
         max-width: 125px;
         color: #fff;
         background-color: #ff6f23;
 
-        display: inline-block;
+        // display: inline-block;
         margin: 0;
         padding: 4.5px 12px;
         border: none;
