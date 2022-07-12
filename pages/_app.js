@@ -22,6 +22,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <React.Fragment>
       <Head>
+        <title>BetSol - Solana based lottery program</title>
         <meta name="title" content="BetSol - Solana based lottery program" />
         <meta name="description" content="Take part in range of lotteries on the decentralised infrastructure. Developed by Jaymanyoo Singh Chouhan (@captainIN)" />
         <meta name="keywords" content="solana, anchor, lottery, dapp" />
