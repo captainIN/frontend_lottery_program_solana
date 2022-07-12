@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.wallet-adapter-button-trigger {
+  background-color: #d9a91b !important;
+}

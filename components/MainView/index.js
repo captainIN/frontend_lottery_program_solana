@@ -13,49 +13,70 @@ import useMethods from '../../hooks/useMethods';
 
 
 function MainView() {
-    const wallet = useWallet()
-    const walletAddress = wallet.publicKey.toString();
-    const [userIsManager, setUserIsManager] = useState(false)
-
-    
-    const {
-        all_lotteries,
-        getAllLotteries,
-        take_part,
-        create_lottery,
-        initialize,
-        elect_winner,
-        getParticipantInfo,
-        claimReward,
-        getManager
-    } = useMethods();
+  const wallet = useWallet()
+  const walletAddress = wallet.publicKey.toString();
+  const [userIsManager, setUserIsManager] = useState(false)
 
 
+  const {
+    all_lotteries,
+    getAllLotteries,
+    take_part,
+    create_lottery,
+    initialize,
+    elect_winner,
+    getParticipantInfo,
+    claimReward,
+    getManager
+  } = useMethods();
 
-    useEffect(() => {
-            getAllLotteries();
-            checkOwner();
-    }, [])
-    const checkOwner = async () => {
-      let user = await getManager();
-      if(user.toString() === wallet.publicKey.toString()){
-        setUserIsManager(true)
-      }
+
+
+  useEffect(() => {
+    getAllLotteries();
+    checkOwner();
+  }, [])
+  const checkOwner = async () => {
+    let user = await getManager();
+    if (user.toString() === wallet.publicKey.toString()) {
+      setUserIsManager(true)
     }
+  }
   return (
-    <div>
+    <div className='main-container'>
       {userIsManager && <button onClick={create_lottery}>create lottery</button>}
+      <div className='heading-lottery-type'>Active:</div>
+      <div className='lottery-grid'>
         {all_lotteries?.map(lottery => {
-            return <LotteryCard 
-            key={lottery.account.index} 
-            data={lottery.account} 
-            take_part={take_part}
-            elect_winner={elect_winner}
-            getParticipantInfo={getParticipantInfo}
-            claimReward={claimReward}
-            userIsManager={userIsManager}
+          if (lottery.account.isActive) {
+            return <LotteryCard
+              key={lottery.account.index}
+              data={lottery.account}
+              take_part={take_part}
+              elect_winner={elect_winner}
+              getParticipantInfo={getParticipantInfo}
+              claimReward={claimReward}
+              userIsManager={userIsManager}
             />
+          }
         })}
+      </div>
+      <div className='heading-lottery-type'>Completed:</div>
+      <div className='lottery-grid'>
+        {all_lotteries?.map(lottery => {
+          if (!lottery.account.isActive) {
+            return <LotteryCard
+              key={lottery.account.index}
+              data={lottery.account}
+              take_part={take_part}
+              elect_winner={elect_winner}
+              getParticipantInfo={getParticipantInfo}
+              claimReward={claimReward}
+              userIsManager={userIsManager}
+            />
+          }
+        })}
+      </div>
     </div>
   )
 }

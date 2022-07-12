@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import '../styles/Main.scss'
 import React from 'react';
 import Head from 'next/head';
 import CssBaseline from '@material-ui/core/CssBaseline';

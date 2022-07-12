@@ -32,7 +32,7 @@ function useMethods() {
     console.log("Your initialized transaction signature", tx);
   }
 
-  const create_lottery = async (fees = 100000000) => {
+  const create_lottery = async (fees = 10000000) => {
     let [account_state_pda] = await anchor.web3.PublicKey.findProgramAddress(
       [utf8.encode("state")],
       program.programId
@@ -44,7 +44,7 @@ function useMethods() {
       program.programId
     )
     console.log({ lottery_pda })
-    const tx = await program.rpc.createLottery(new anchor.BN(1000000000), {
+    const tx = await program.rpc.createLottery(new anchor.BN(100000000), {
       accounts: {
         programState: account_state_pda,
         lottery: lottery_pda,

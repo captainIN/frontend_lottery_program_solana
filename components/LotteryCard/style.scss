@@ -1,0 +1,194 @@
+.lottery-card {
+    padding: 0 10px 5px 10px;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    color: #3F3F3F;
+    background-color: #fecc45;
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 40px;
+
+    &.inactive {
+        filter: grayscale(100%);
+    }
+
+    &.winner-card {
+        filter: none;
+        background-image: url('https://acegif.com/wp-content/gif/confetti-10.gif');
+        background-size: contain;
+        background-color: #f2f2f2;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .pool-size {
+        font-size: 30px;
+
+        .currency {
+            font-size: 18px;
+        }
+    }
+
+    .entry-btn {
+        min-width: 107px;
+        max-width: 125px;
+        color: #fff;
+        background-color: #ff6f23;
+
+        display: inline-block;
+        margin: 0;
+        padding: 4.5px 12px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: rgb(20 20 20 / 30%) 0 1px 1px;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        vertical-align: middle;
+        text-decoration: none !important;
+
+        &.disabled {
+            background-color: #484848a6;
+
+            cursor: not-allowed;
+
+        }
+
+        &.success {
+            margin-top: 4px;
+            background-color: #005c82;
+            font-size: 12px;
+        }
+
+    }
+
+    .claim-btn {
+        cursor: pointer;
+        max-width: 125px;
+        margin: 0;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 4px;
+        background-color: #ffb51b;
+        color: #523802;
+
+        &.disabled {
+            filter: grayscale(100%);
+            cursor: not-allowed;
+        }
+    }
+
+    .entry-fee {
+        position: absolute;
+        top: -6.1px;
+        right: 10px;
+        color: #fff;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 45px solid transparent;
+            border-right: 45px solid transparent;
+            border-top: 6px solid #58aa00b8;
+            left: 0px;
+            right: 0;
+        }
+
+        .cost {
+            position: relative;
+            display: block;
+            text-align: center;
+            background: #58aa00b8;
+            font-size: 14px;
+            line-height: 1;
+            padding: 12px 8px 10px;
+            border-top-right-radius: 8px;
+            width: 90px;
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: "";
+            }
+
+            &:before {
+                height: 6px;
+                width: 6px;
+                left: -6px;
+                top: 0;
+                background: #58aa00b8;
+            }
+
+            &:after {
+                height: 6px;
+                width: 8px;
+                left: -8px;
+                top: 0;
+                border-radius: 8px 8px 0 0;
+                background: #33580c;
+            }
+
+            .title {
+                font-size: 10px;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+
+            .fee {
+                font-size: 16px;
+                font-weight: bold;
+
+                .currency {
+                    font-size: 9px;
+                }
+            }
+        }
+
+
+    }
+
+    .winner-tag {
+        color: #523802;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    .participants {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        padding: 1px 5px;
+        background-color: #fff;
+        border-radius: 20px;
+
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 15px;
+            height: 15px;
+        }
+
+        .count {
+            margin-left: 4px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+    }
+    .reveal-winner{
+        color: #523802;
+        font-weight: bold;
+        font-size: 12px;
+        cursor: pointer;
+    }
+}
